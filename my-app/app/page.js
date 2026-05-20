@@ -1,99 +1,59 @@
-import Navbar from "../components/Navbar.js"
 import "../styles/page.css"
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
+    <main>    
+      <div className="loginContainer">
 
-      <div className="container">
-
-        <div className="left">
-          <div className="badge">
-            Sistema Completo
-          </div>
-
+        <div className="loginCard">          
           <h1>
-            Organize congressos e eventos médicos
-            de forma profissional
+            Bem-vindo ao MedEvent
           </h1>
 
           <p>
-            Crie eventos, gerencie inscrições,
-            participantes e certificados em um
-            único sistema moderno e intuitivo.
+            Faça login para gerenciar eventos,
+            inscrições e certificados médicos.
           </p>
 
-          <div className="buttons">
+          <form className="loginForm">
+
+            <input
+              type="email"
+              placeholder="Seu e-mail"
+            />
+
+            <input
+              type="password"
+              placeholder="Sua senha"
+            />
+
             <button className="primary">
-              Criar Evento
+              Entrar
             </button>
 
-            <button className="secondary">
-              Explorar Eventos
-            </button>
+          </form>
+
+          <div className="links">
+
+            <a
+              href="/recuperar-senha"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Recuperar senha
+            </a>
+
+            <a
+              href="/criar-conta"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Criar conta
+            </a>
+
           </div>
+
         </div>
-
-        <div className="right">
-          <div className="card">
-            <h3>Congresso de Cardiologia</h3>
-
-            <span>
-              25 Nov • Recife - PE
-            </span>
-
-            <p>
-              Mais de 1200 profissionais da saúde.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Simpósio de Neurologia</h3>
-
-            <span>
-              12 Dez • São Paulo - SP
-            </span>
-
-            <p>
-              Evento híbrido com palestras ao vivo.
-            </p>
-          </div>
-        </div>
-
-        <section className="benefits">
-          <h2>
-            Por que usar a MedEvent?
-          </h2>
-
-          <div className="benefitGrid">
-
-            <div className="benefitCard">
-              <h3>Inscrições Online</h3>
-
-              <p>
-                Controle participantes em tempo real.
-              </p>
-            </div>
-
-            <div className="benefitCard">
-              <h3>Certificados</h3>
-
-              <p>
-                Gere certificados automaticamente.
-              </p>
-            </div>
-
-            <div className="benefitCard">
-              <h3>Dashboard Completo</h3>
-
-              <p>
-                Métricas e relatórios dos eventos.
-              </p>
-            </div>
-
-          </div>
-        </section>
 
       </div>
     </main>

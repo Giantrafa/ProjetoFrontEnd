@@ -36,7 +36,7 @@ export default function Home() {
           <div className="links">
 
             <a
-              href="/recuperar-senha"
+              href="/RecuperarSenha"
               target="_blank"
               rel="noreferrer"
             >
@@ -44,7 +44,7 @@ export default function Home() {
             </a>
 
             <a
-              href="/criar-conta"
+              href="/CriarConta"
               target="_blank"
               rel="noreferrer"
             >

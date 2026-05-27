@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoPrime Oficina | Especialistas em Carros</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <div class="logo-icon">🏎️</div>
+          <span>AutoPrime Oficina</span>
+        </div>
+
+        <ul class="menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#modelos">Modelos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <a class="btn" href="#contato">Agendar revisão</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">⚙️ Mecânica completa • Diagnóstico moderno</div>
+          <h1>Sua oficina com visual <span>premium</span> e serviço de confiança.</h1>
+          <p>
+            Especialistas em manutenção automotiva, revisão preventiva, troca de óleo,
+            freios, suspensão, elétrica e diagnóstico computadorizado para diversos modelos.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#modelos">Ver modelos atendidos</a>
+            <a class="btn secondary" href="#servicos">Conhecer serviços</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>+1.200</strong>
+              <small>Carros atendidos</small>
+            </div>
+            <div class="stat">
+              <strong>4.9★</strong>
+              <small>Avaliação média</small>
+            </div>
+            <div class="stat">
+              <strong>24h</strong>
+              <small>Orçamento rápido</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="car-showcase">
+          <div class="floating-card one">
+            <strong>Scanner automotivo</strong>
+            <small>Diagnóstico preciso</small>
+          </div>
+
+          <div class="car-art" aria-label="Carro esportivo ilustrativo">
+            <div class="car-body">
+              <div class="window"></div>
+              <div class="headlight"></div>
+            </div>
+            <div class="wheel left"></div>
+            <div class="wheel right"></div>
+          </div>
+
+          <div class="road"></div>
+
+          <div class="floating-card two">
+            <strong>Revisão completa</strong>
+            <small>Motor • Freio • Suspensão</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-title">
+          <span>Nossos serviços</span>
+          <h2>Tudo que seu carro precisa em um só lugar</h2>
+          <p>Atendimento profissional para carros populares, sedãs, SUVs, picapes e veículos premium.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🛢️</div>
+            <h3>Troca de óleo</h3>
+            <p>Óleo, filtro, fluídos e verificação geral para manter o motor protegido.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🧰</div>
+            <h3>Revisão preventiva</h3>
+            <p>Checklist completo para evitar problemas e aumentar a vida útil do carro.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🛞</div>
+            <h3>Freios e suspensão</h3>
+            <p>Pastilhas, discos, amortecedores, buchas, bandejas e alinhamento técnico.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>Diagnóstico eletrônico</h3>
+            <p>Scanner automotivo para leitura de falhas, sensores e sistemas do veículo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="modelos">
+      <div class="container">
+        <div class="section-title">
+          <span>Modelos atendidos</span>
+          <h2>Trabalhamos com vários tipos de carros</h2>
+          <p>Use os filtros abaixo para visualizar exemplos de modelos que a oficina atende.</p>
+        </div>
+
+        <div class="models-panel">
+          <div class="filters">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="popular">Populares</button>
+            <button class="filter-btn" data-filter="sedan">Sedãs</button>
+            <button class="filter-btn" data-filter="suv">SUVs</button>
+            <button class="filter-btn" data-filter="pickup">Picapes</button>
+            <button class="filter-btn" data-filter="premium">Premium</button>
+          </div>
+
+          <div class="models-grid" id="modelsGrid">
+            <article class="model-card" data-category="popular">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>Chevrolet Onix</h3>
+                <span class="model-badge">Popular</span>
+              </div>
+              <p>Revisão, óleo, freios, elétrica, suspensão e scanner.</p>
+              <div class="model-meta">
+                <small>Motor 1.0</small><small>Flex</small><small>Manual/Auto</small>
+              </div>
+            </article>
+
+            <article class="model-card" data-category="popular">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>Hyundai HB20</h3>
+                <span class="model-badge">Popular</span>
+              </div>
+              <p>Manutenção completa para uso urbano e viagem.</p>
+              <div class="model-meta">
+                <small>Motor 1.0/1.6</small><small>Flex</small><small>Revisão</small>
+              </div>
+            </article>
+
+            <article class="model-card" data-category="sedan">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>Toyota Corolla</h3>
+                <span class="model-badge">Sedã</span>
+              </div>
+              <p>Diagnóstico, revisão premium, freios e troca de fluidos.</p>
+              <div class="model-meta">
+                <small>Automático</small><small>Híbrido/Flex</small><small>Premium</small>
+              </div>
+            </article>
+
+            <article class="model-card" data-category="sedan">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>Honda Civic</h3>
+                <span class="model-badge">Sedã</span>
+              </div>
+              <p>Atendimento técnico para motor, câmbio, suspensão e eletrônica.</p>
+              <div class="model-meta">
+                <small>Motor 2.0</small><small>CVT</small><small>Scanner</small>
+              </div>
+            </article>
+
+            <article class="model-card" data-category="suv">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>Jeep Compass</h3>
+                <span class="model-badge">SUV</span>
+              </div>
+              <p>Revisão completa, suspensão, eletrônica e diagnóstico avançado.</p>
+              <div class="model-meta">
+                <small>SUV</small><small>Diesel/Flex</small><small>4x4</small>
+              </div>
+            </article>
+
+            <article class="model-card" data-category="suv">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>Volkswagen T-Cross</h3>
+                <span class="model-badge">SUV</span>
+              </div>
+              <p>Manutenção preventiva e corretiva para veículos turbo.</p>
+              <div class="model-meta">
+                <small>TSI</small><small>Turbo</small><small>Automático</small>
+              </div>
+            </article>
+
+            <article class="model-card" data-category="pickup">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>Toyota Hilux</h3>
+                <span class="model-badge">Picape</span>
+              </div>
+              <p>Serviço pesado para suspensão, freios, óleo e uso intenso.</p>
+              <div class="model-meta">
+                <small>Diesel</small><small>4x4</small><small>Robusta</small>
+              </div>
+            </article>
+
+            <article class="model-card" data-category="premium">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>BMW Série 3</h3>
+                <span class="model-badge">Premium</span>
+              </div>
+              <p>Diagnóstico técnico, revisão premium e cuidado especializado.</p>
+              <div class="model-meta">
+                <small>Turbo</small><small>Premium</small><small>Scanner</small>
+              </div>
+            </article>
+
+            <article class="model-card" data-category="premium">
+              <div class="mini-car"></div>
+              <div class="model-top">
+                <h3>Mercedes-Benz Classe C</h3>
+                <span class="model-badge">Premium</span>
+              </div>
+              <p>Manutenção com atenção aos detalhes e sistemas eletrônicos.</p>
+              <div class="model-meta">
+                <small>Luxo</small><small>Automático</small><small>Eletrônica</small>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container about">
+        <div class="about-image">
+          <div class="tool">🔧</div>
+          <div class="tool">⚙️</div>
+          <div class="tool">🧪</div>
+        </div>
+
+        <div class="about-content">
+          <h2>Oficina moderna, atendimento transparente e resultado profissional.</h2>
+          <p>
+            A AutoPrime Oficina foi pensada para transmitir confiança desde o primeiro contato.
+            Aqui o cliente acompanha o diagnóstico, entende o problema e recebe um orçamento claro.
+          </p>
+          <p>
+            O objetivo é entregar um serviço de qualidade, com organização, tecnologia e cuidado
+            com cada detalhe do veículo.
+          </p>
+
+          <div class="check-list">
+            <div class="check-item"><span>✓</span> Orçamento antes de iniciar o serviço</div>
+            <div class="check-item"><span>✓</span> Peças de qualidade e garantia no serviço</div>
+            <div class="check-item"><span>✓</span> Atendimento para carros nacionais e importados</div>
+            <div class="check-item"><span>✓</span> Diagnóstico eletrônico com scanner automotivo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="section-title">
+          <span>Agendamento</span>
+          <h2>Solicite seu orçamento</h2>
+          <p>Preencha os dados abaixo para simular o contato com a oficina.</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="contact-card">
+              <h3>📍 Endereço</h3>
+              <p>Av. Principal, 1000 — Recife/PE</p>
+            </div>
+            <div class="contact-card">
+              <h3>📞 Telefone</h3>
+              <p>(81) 99999-9999</p>
+            </div>
+            <div class="contact-card">
+              <h3>🕒 Horário</h3>
+              <p>Segunda a sábado, das 8h às 18h</p>
+            </div>
+          </div>
+
+          <form id="appointmentForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Nome</label>
+                <input id="name" type="text" placeholder="Seu nome" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Telefone</label>
+                <input id="phone" type="tel" placeholder="(81) 99999-9999" required />
+              </div>
+
+              <div class="field">
+                <label for="car">Modelo do carro</label>
+                <input id="car" type="text" placeholder="Ex: Onix 2022" required />
+              </div>
+
+              <div class="field">
+                <label for="service">Serviço desejado</label>
+                <select id="service" required>
+                  <option value="">Selecione</option>
+                  <option>Troca de óleo</option>
+                  <option>Revisão completa</option>
+                  <option>Freios e suspensão</option>
+                  <option>Diagnóstico eletrônico</option>
+                  <option>Outro serviço</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">Mensagem</label>
+                <textarea id="message" placeholder="Descreva o problema do carro"></textarea>
+              </div>
+
+              <div class="field full">
+                <button class="btn" type="submit">Enviar solicitação</button>
+              </div>
+            </div>
+
+            <div class="form-message" id="formMessage">
+              Solicitação enviada com sucesso! A oficina entrará em contato em breve.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 AutoPrime Oficina. Todos os direitos reservados.</p>
+      <p>Desenvolvido para projeto front-end.</p>
+    </div>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const modelCards = document.querySelectorAll('.model-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        modelCards.forEach(card => {
+          const category = card.dataset.category;
+          const shouldShow = filter === 'todos' || filter === category;
+
+          card.style.display = shouldShow ? 'block' : 'none';
+        });
+      });
+    });
+
+    const form = document.getElementById('appointmentForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      formMessage.style.display = 'block';
+      form.reset();
+
+      setTimeout(() => {
+        formMessage.style.display = 'none';
+      }, 4500);
+    });
+  </script>
+</body>
+</html>

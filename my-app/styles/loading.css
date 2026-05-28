@@ -1,0 +1,39 @@
+.loading-fullscreen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-page);
+  z-index: 999;
+}
+
+.loading-spinner {
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.7s linear infinite;
+}
+
+.loading-sm {
+  width: 20px;
+  height: 20px;
+}
+
+.loading-md {
+  width: 36px;
+  height: 36px;
+  border-width: 3px;
+}
+
+.loading-lg {
+  width: 52px;
+  height: 52px;
+  border-width: 4px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

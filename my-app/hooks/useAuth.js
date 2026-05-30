@@ -50,3 +50,24 @@ export function useCurrentUser() {
     staleTime: 5 * 60 * 1000,
   })
 }
+
+export function useForgotPassword() {
+  return useMutation({
+    mutationFn: async ({ email }) => {
+      await api.post("/auth/forgot-password", { email })
+    },
+  })
+}
+
+export function useResetPassword() {
+  const router = useRouter()
+
+  return useMutation({
+    mutationFn: async ({ token, newPassword }) => {
+      await api.post("/auth/reset-password", { token, newPassword })
+    },
+    onSuccess: () => {
+      router.push("/login")
+    },
+  })
+}

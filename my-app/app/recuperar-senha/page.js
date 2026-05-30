@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { useForgotPassword } from "@/hooks/useAuth"
 import { useAuthStore } from "@/zustand"
 import Loading from "@/components/Loading"
 import "@/styles/auth.css"
@@ -11,9 +12,11 @@ export default function RecuperarSenhaPage() {
   const router = useRouter()
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
   const [email, setEmail] = useState("")
-  const [error, setError] = useState("")
+  const [localError, setLocalError] = useState("")
   const [sent, setSent] = useState(false)
   const [hydrated, setHydrated] = useState(false)
+
+  const forgotPassword = useForgotPassword()
 
   useEffect(() => {
     setHydrated(true)
@@ -29,16 +32,21 @@ export default function RecuperarSenhaPage() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    setError("")
+    setLocalError("")
 
     if (!email.trim()) {
-      setError("Informe seu e-mail.")
+      setLocalError("Informe seu e-mail.")
       return
     }
 
-    // TODO: integrar com POST /auth/forgot-password
-    setSent(true)
+    forgotPassword.mutate({ email }, { onSuccess: () => setSent(true) })
   }
+
+  const errorMessage =
+    localError ||
+    (forgotPassword.isError
+      ? forgotPassword.error?.response?.data?.message || "Erro ao enviar. Tente novamente."
+      : "")
 
   return (
     <main className="auth-page">
@@ -56,7 +64,7 @@ export default function RecuperarSenhaPage() {
               : "Informe seu e-mail para receber as instruções"}
           </p>
 
-          {error && <div className="auth-error">{error}</div>}
+          {errorMessage && <div className="auth-error">{errorMessage}</div>}
 
           {sent ? (
             <div className="auth-success">
@@ -77,8 +85,12 @@ export default function RecuperarSenhaPage() {
                 />
               </div>
 
-              <button className="auth-button" type="submit">
-                Enviar instruções
+              <button
+                className="auth-button"
+                type="submit"
+                disabled={forgotPassword.isPending}
+              >
+                {forgotPassword.isPending ? "Enviando..." : "Enviar instruções"}
               </button>
             </form>
           )}

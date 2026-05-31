@@ -1,0 +1,142 @@
+.sidebar {
+  height: 100vh;
+  background: rgba(8, 11, 18, 0.92);
+  backdrop-filter: blur(18px);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: width 0.25s ease;
+  overflow: hidden;
+}
+
+.sidebar-open {
+  width: var(--sidebar-open-width);
+}
+
+.sidebar-collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.sidebar-header {
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--topbar-height);
+  flex-shrink: 0;
+}
+
+.sidebar-logo-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--accent);
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.sidebar-collapsed .sidebar-logo {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 11px 20px;
+  color: var(--text-muted);
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar-item:hover {
+  background: rgba(239, 35, 60, 0.07);
+  color: var(--text);
+}
+
+.sidebar-item-active {
+  background: rgba(239, 35, 60, 0.12);
+  color: var(--accent);
+  border-right: 3px solid var(--accent);
+}
+
+.sidebar-icon {
+  font-size: 17px;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+  line-height: 1;
+}
+
+.sidebar-label {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.sidebar-collapsed .sidebar-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-footer {
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 11px 20px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-logout:hover {
+  background: rgba(255, 68, 68, 0.07);
+  color: var(--error);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+  }
+}

@@ -23,7 +23,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (hydrated && isAuthenticated) {
-      router.push("/dashboard")
+      router.push("/")
     }
   }, [hydrated, isAuthenticated, router])
 

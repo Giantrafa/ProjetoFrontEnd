@@ -20,24 +20,3 @@ export const useUIStore = create((set) => ({
   setSidebarOpen: (open) => set({ sidebarOpen: open }),
 }))
 
-// Legacy stores kept for backwards compatibility
-export const useUserStorage = create(
-  persist(
-    (set) => ({
-      loggedUser: null,
-      setLoggedUser: (loggedUser) => set({ loggedUser }),
-    }),
-    { name: "user-storage" }
-  )
-)
-
-export const useTaskFilter = create(
-  persist(
-    (set) => ({
-      filtrarConcluidas: false,
-      toggleFiltrarConcluidas: () =>
-        set((state) => ({ filtrarConcluidas: !state.filtrarConcluidas })),
-    }),
-    { name: "taskFilter-storage" }
-  )
-)

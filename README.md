@@ -7,5 +7,3 @@ Vitor Ferreira
 Rafael De Assis
 
 Sergio Bandeira
-
-Márcio Santos

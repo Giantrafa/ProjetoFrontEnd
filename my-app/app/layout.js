@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google"
 import QueryProvider from "@/components/QueryProvider"
 import "../styles/global.css"
+import "../styles/autoprime.css"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

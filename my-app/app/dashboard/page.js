@@ -1,9 +1,45 @@
 "use client"
 
 import { useAuthStore } from "@/zustand"
+import { useDashboard } from "@/hooks/useDashboard"
+import Loading from "@/components/Loading"
 
 export default function DashboardPage() {
   const user = useAuthStore((state) => state.user)
+  const { data, isLoading, isError } = useDashboard()
+
+  const stats = [
+    {
+      label: "Ordens Abertas",
+      value: data?.ordensAbertas ?? "—",
+      color: "stat-value-accent",
+    },
+    {
+      label: "Em Andamento",
+      value: data?.ordensEmAndamento ?? "—",
+      color: "stat-value-blue",
+    },
+    {
+      label: "Concluídas",
+      value: data?.ordensConcluidas ?? "—",
+      color: "stat-value-green",
+    },
+    {
+      label: "Clientes",
+      value: data?.clientes ?? "—",
+      color: "stat-value-accent",
+    },
+    {
+      label: "Veículos",
+      value: data?.veiculos ?? "—",
+      color: "stat-value-blue",
+    },
+    {
+      label: "Peças c/ estoque baixo",
+      value: data?.pecasEstoqueBaixo ?? "—",
+      color: data?.pecasEstoqueBaixo > 0 ? "stat-value-warn" : "stat-value-green",
+    },
+  ]
 
   return (
     <div className="dashboard">
@@ -12,24 +48,28 @@ export default function DashboardPage() {
         Bem-vindo, {user?.name || user?.email || "usuário"}!
       </p>
 
-      <div className="stats-grid">
-        <div className="stat-card">
-          <span className="stat-label">Ordens Abertas</span>
-          <span className="stat-value">12</span>
+      {isError && (
+        <div className="error-banner">
+          Não foi possível carregar os dados. Verifique a conexão com o servidor.
         </div>
-        <div className="stat-card">
-          <span className="stat-label">Em Andamento</span>
-          <span className="stat-value">5</span>
+      )}
+
+      {isLoading ? (
+        <div style={{ display: "flex", justifyContent: "center", padding: "48px" }}>
+          <Loading size="lg" />
         </div>
-        <div className="stat-card">
-          <span className="stat-label">Concluídas Hoje</span>
-          <span className="stat-value">8</span>
+      ) : (
+        <div className="stats-grid">
+          {stats.map((stat) => (
+            <div key={stat.label} className="stat-card">
+              <span className="stat-label">{stat.label}</span>
+              <span className={`stat-value ${stat.color || ""}`}>
+                {stat.value}
+              </span>
+            </div>
+          ))}
         </div>
-        <div className="stat-card">
-          <span className="stat-label">Clientes Ativos</span>
-          <span className="stat-value">47</span>
-        </div>
-      </div>
+      )}
     </div>
   )
 }

@@ -1,4 +1,9 @@
 # ProjetoFrontEnd
 
-Alunos do Projeto
-Rafael
+Alunos do Projeto:
+
+Vitor Ferreira
+
+Rafael De Assis
+
+Sergio Bandeira

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useAuthStore } from "@/zustand"
 import Loading from "@/components/Loading"
+import AutoPrimeLanding from "@/components/AutoPrimeLanding"
 
 export default function Home() {
   const router = useRouter()
@@ -15,10 +16,12 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    if (hydrated) {
-      router.push(isAuthenticated ? "/dashboard" : "/login")
+    if (hydrated && isAuthenticated) {
+      router.push("/dashboard")
     }
   }, [hydrated, isAuthenticated, router])
 
-  return <Loading fullscreen />
+  if (!hydrated) return <Loading fullscreen />
+
+  return isAuthenticated ? <Loading fullscreen /> : <AutoPrimeLanding />
 }

@@ -37,6 +37,11 @@ export default function LoginPage() {
   return (
     <main className="auth-page">
       <div className="auth-container">
+        <Link href="/" className="auth-back-button">
+          <span className="back-icon">←</span>
+          Voltar
+        </Link>
+        
         <div className="auth-brand">
           <span className="auth-brand-icon">🔧</span>
           <span className="auth-brand-name">AutoShop Pro</span>

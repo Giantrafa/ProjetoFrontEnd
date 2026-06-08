@@ -30,8 +30,10 @@ export function useVeiculosDoCliente(clienteId) {
   return useQuery({
     queryKey: ["veiculos-cliente", clienteId],
     queryFn: async () => {
-      const { data } = await api.get(`/api/v1/clientes/${id}/veiculos`)
-      return Array.isArray(data) ? data : []
+      const { data } = await api.get(`/api/v1/veiculos`, {
+        params: { clienteId: id, size: 200 }
+      })
+      return Array.isArray(data?.content) ? data.content : []
     },
     enabled: !!id && !isNaN(id),
   })

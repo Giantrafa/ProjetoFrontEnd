@@ -59,8 +59,11 @@ export default function CadastroPage() {
     <main className="auth-page">
       <div className="auth-container">
         <div className="auth-brand">
-          <span className="auth-brand-icon">🔧</span>
-          <span className="auth-brand-name">AutoShop Pro</span>
+          <img
+            src="/logo.png"
+            alt="AutoShop Pro"
+            style={{ height: "80px", width: "auto", objectFit: "contain" }}
+          />
         </div>
 
         <div className="auth-card">

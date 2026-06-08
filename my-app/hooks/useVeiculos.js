@@ -25,13 +25,15 @@ export function useVeiculos(params = {}) {
 }
 
 export function useVeiculosDoCliente(clienteId) {
+  const id = clienteId ? parseInt(clienteId, 10) : null
+
   return useQuery({
     queryKey: ["veiculos-cliente", clienteId],
     queryFn: async () => {
       const { data } = await api.get(`/api/v1/clientes/${clienteId}/veiculos`)
-      return data
+      return Array.isArray(data) ? data : []
     },
-    enabled: !!clienteId, // só vai roda se clienteId for válido
+    enabled: !!id && !isNaN(id),
   })
 }
 

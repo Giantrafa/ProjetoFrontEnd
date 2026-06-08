@@ -34,7 +34,16 @@ export default function Sidebar() {
   return (
     <aside className={`sidebar ${sidebarOpen ? "sidebar-open" : "sidebar-collapsed"}`}>
       <div className="sidebar-header">
-        <span className="sidebar-logo-icon">🔧</span>
+        <img
+          src="/logo.png"
+          alt="AutoShop Pro"
+          style={{
+          height: "40px",
+          width: "auto",
+          objectFit: "contain",
+          flexShrink: 0,
+        }}
+      />
         <span className="sidebar-logo">AutoShop Pro</span>
       </div>
 

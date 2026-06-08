@@ -121,7 +121,11 @@ function Header() {
       <div className="container">
         <nav>
           <div className="logo">
-            <div className="logo-icon">🏎️</div>
+            <img
+              src="/logo.png"
+              alt="AutoShop Pro"
+              style={{ height: "48px", width: "auto", objectFit: "contain" }}
+            />
             <span>AutoPrime Oficina</span>
           </div>
 
